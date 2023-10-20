@@ -1,0 +1,56 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Ubuntu";
+    font-weight: 900;
+    line-height: 1.5;
+}
+a {
+    text-decoration: none;
+
+}
+
+ul {
+  list-style: none;
+}
+
+.kapak {
+
+}
+.nav-img{
+    height: auto;
+
+  max-width: 100%;
+}
+
+.product {
+    padding: ;
+}
+.footer {
+    color: black;
+
+    padding: 5% 15%;
+
+}
+.footer-icon {
+
+    padding: 1%;
+}
+
+.most-selling {
+    text-align: left;
+}
+
+.most-selling-img {
+    padding: 3%;
+    height: auto;
+
+}
+
+.carousel-it {
+    padding: 7% 15%;
+}
