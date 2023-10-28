@@ -32,7 +32,6 @@ ul {
 }
 .footer {
     color: black;
-
     padding: 5% 15%;
 
 }
@@ -47,10 +46,29 @@ ul {
 
 .most-selling-img {
     padding: 3%;
-    height: auto;
 
 }
 
 .carousel-it {
-    padding: 7% 15%;
+    padding: 7% 10%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    filter: invert(100%);
+}
+
+.product.p {
+}
+
+
+.vr {
+    height: 14.5rem;
+}
+
+@media (max-width: 1028px) {
+    .most-selling-img {
+    padding: 3%;
+    width: 200px;
+
+}
 }
