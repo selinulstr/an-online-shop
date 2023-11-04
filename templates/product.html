@@ -24,7 +24,11 @@
 
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
+          {% if not current_user.is_authenticated: %}
           <a class="nav-link" aria-current="page" href="{{url_for('login')}}">Login</a>
+          {% else: %}
+          <a class="nav-link" aria-current="page" href="{{url_for('logout')}}">Logout</a>
+          {% endif %}
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('cart')}}">Cart</a>
@@ -92,9 +96,10 @@
     <div class="">
       <h1>Product</h1>
     <hr>
-    <h4>$ 90.00</h4>
+    <h4>$ 50.00</h4>
 
     <h5>QTY</h5>
+
       <form method="post" action="/add_to_cart">
       <div class="d-flex flex-row">
 
@@ -104,6 +109,8 @@
   <option value="2">2</option>
   <option value="3">3</option>
 </select>
+        <input name="product-name" value="Product" type="hidden">
+        <input name="price" value="50" type="hidden">
     <button class="btn btn-dark ms-3 m-3" type="submit">Add to Cart</button>
 
       </div>

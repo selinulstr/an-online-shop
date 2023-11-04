@@ -24,10 +24,14 @@
 
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
+          {% if not current_user.is_authenticated: %}
           <a class="nav-link" aria-current="page" href="{{url_for('login')}}">Login</a>
+          {% else: %}
+          <a class="nav-link" aria-current="page" href="{{url_for('logout')}}">Logout</a>
+          {% endif %}
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('login')}}">Cart</a>
+          <a class="nav-link" href="{{url_for('cart')}}">Cart</a>
         </li>
       </ul>
         </div>
@@ -144,18 +148,22 @@
     <div class="">
       <h1><a href="/product" class="link-secondary">Product</a></h1>
     <hr>
-    <h4>$ 90.00</h4>
+    <h4>$ 50.00</h4>
 
     <h5>QTY</h5>
+      <form method="post" action="/add_to_cart">
       <div class="d-flex flex-row">
-    <select class="form-select form-select-sm w-auto me-3 mt-3 mb-3">
+    <select name="qty" class="form-select form-select-sm w-auto me-3 mt-3 mb-3">
 
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
 </select>
+        <input name="product-name" value="Product" type="hidden">
+        <input name="price" value="50" type="hidden">
     <button class="btn btn-dark ms-3 m-3" type="submit">Add to Cart</button>
       </div>
+      </form>
     <hr class="">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae orci mattis, molestie lorem lacinia,
       pharetra metus. In elementum, odio a aliquam ullamcorper, sem enim condimentum erat, eu tincidunt ipsum turpis
@@ -174,18 +182,22 @@
   <div>
     <h1><a href="/product" class="link-secondary">Product</a></h1>
     <hr class="">
-    <h4>$ 90.00</h4>
+    <h4>$ 50.00</h4>
 
 
     <h5>QTY</h5>
+    <form method="post" action="/add_to_cart">
     <div class="d-flex flex-row ">
-    <select class="form-select form-select-sm w-auto me-3 mt-3 mb-3">
+    <select name="qty" class="form-select form-select-sm w-auto me-3 mt-3 mb-3">
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
 </select>
+      <input name="product-name" value="Product" type="hidden">
+        <input name="price" value="50" type="hidden">
     <button class="btn btn-dark ms-3 m-3" type="submit">Add to Cart</button>
       </div>
+      </form>
     <hr class="">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae orci mattis, molestie lorem lacinia,
       pharetra metus. In elementum, odio a aliquam ullamcorper, sem enim condimentum erat, eu tincidunt ipsum turpis
